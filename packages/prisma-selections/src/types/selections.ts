@@ -51,7 +51,7 @@ export type RecursivelyExpandSelection<
 	SelectionMappingObject
 > = Omit<SelectionMappingObject, `$${string}`> &
 	(Selections<SelectionMappingObject> extends never
-		? // eslint-disable-next-line @typescript-eslint/ban-types -- Cannot use `EmptyObject` here or else it messes up Prisma's type inference (and we intersect with it anyways)
+		? // eslint-disable-next-line @typescript-eslint/ban-types
 		  {}
 		: {
 				[K in Selections<SelectionMappingObject>]: K extends keyof SelectionMapping
