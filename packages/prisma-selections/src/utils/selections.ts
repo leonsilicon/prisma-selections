@@ -115,5 +115,5 @@ export function defineSelectionMappings<
 			}
 		} as any
 
-	return set as any
+	return { set } as any
 }
