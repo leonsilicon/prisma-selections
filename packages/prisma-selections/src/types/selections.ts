@@ -1,5 +1,6 @@
 import type { PrismaClient } from '@prisma/client'
-import type { UnionToIntersection } from 'type-fest'
+
+import { type UnionToIntersection } from '~/types/type-fest.js'
 
 export interface SelectionDefinition<
 	_PrismaSelect,
@@ -20,10 +21,7 @@ export interface GetPayload<
 	Definition extends SelectionDefinition<any, any>,
 	Options
 > {
-	select: Definition extends SelectionDefinition<
-		any,
-		infer SelectionMappings
-	>
+	select: Definition extends SelectionDefinition<any, infer SelectionMappings>
 		? UnionToIntersection<ExpandMapping<SelectionMappings, Options>>
 		: never
 }
@@ -31,10 +29,7 @@ export interface GetPayload<
 export type WithOptions<
 	Definition extends SelectionDefinition<any, any>,
 	Select
-> = Definition extends SelectionDefinition<
-	any,
-	infer SelectionMappings
->
+> = Definition extends SelectionDefinition<any, infer SelectionMappings>
 	? Select & {
 			[Key in keyof SelectionMappings]?: boolean
 	  }

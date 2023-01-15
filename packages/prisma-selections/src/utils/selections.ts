@@ -1,11 +1,11 @@
 import { deepmerge } from 'deepmerge-ts'
-import type { Promisable, UnionToIntersection } from 'type-fest'
 
 import type {
 	RecursivelyExpandSelection,
 	SelectionContext,
 	SelectionDefinition,
 } from '~/types/selections.js'
+import type { Promisable, UnionToIntersection } from '~/types/type-fest.js'
 
 type ExpandSelections<
 	SelectionMappings extends Record<string, Record<string, unknown>>

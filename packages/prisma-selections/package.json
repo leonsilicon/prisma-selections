@@ -27,8 +27,7 @@
 		"@prisma/client": "^4"
 	},
 	"dependencies": {
-		"deepmerge-ts": "^4.2.2",
-		"type-fest": "^3.5.2"
+		"deepmerge-ts": "^4.2.2"
 	},
 	"devDependencies": {
 		"@prisma/client": "^4.8.1",
