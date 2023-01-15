@@ -3,20 +3,25 @@
 Prisma selections allow you to define "select aliases", so instead of writing:
 
 ```typescript
-const user = await prisma.user.select({
-  id: true,
-  fullName: true,
-  username: true,
-  avatarUrl: true,
-  // ...
+const user = await prisma.user.findUnique({
+  select: {
+    id: true,
+    fullName: true,
+    username: true,
+    avatarUrl: true,
+    // ...
+  }
 })
 ```
 
 You can write this instead:
 
 ```typescript
-const user = await prisma.user.select({
-  $profileData: true
+const user = await prisma.user.findUnique({
+  select: selections.user({
+    $profileData: true,
+    // ...
+  })
 })
 ```
 
