@@ -26,3 +26,5 @@ const user = await prisma.user.findUnique({
 ```
 
 And fully leverage the powerful intellisense provided by Prisma's TypeScript types!
+
+> We need to use custom `selections.xyz` functions and not a generic function like `deepmerge` in order for intellisense to work within the function parameters.
