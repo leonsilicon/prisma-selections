@@ -8,5 +8,5 @@
 			"~/*": ["./src/*"]
 		}
 	},
-	"include": ["./src", "./typings"]
+	"include": ["./src"]
 }
